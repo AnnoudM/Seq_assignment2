@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F9FAFB;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 5% auto;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    border-radius: 50%;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.download-app {
+    text-decoration: none;
+    color: #0070E0;
+    font-weight: bold;
+}
+
+.auth-google, .auth-passkeys {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.auth-google {
+    background-color: #fa9a91;
+    color: white;
+}
+
+.auth-google:hover {
+    background-color: #e88a80;
+}
+
+.auth-passkeys {
+    background-color: wheat;
+    color: black;
+}
+
+.auth-passkeys:hover {
+    background-color: #f5d7a3;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.line {
+    flex: 1;
+    border: none;
+    height: 1px;
+    background: #DADCE0;
+    margin: 0 10px;
+}
+
+.or {
+    color: #757575;
+    font-size: 14px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #DADCE0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #0070E0;
+    outline: none;
+}
+
+.login-form .remember-me {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.login-form .remember-me input {
+    margin-right: 10px;
+}
+
+.sign-in-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #0D2481;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.sign-in-button:hover {
+    background-color: #0A1E6B;
+}
+
+.forgot-password {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #0070E0;
+    font-size: 14px;
+}
+
+.auth-icon {
+    border-radius: 50%;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}

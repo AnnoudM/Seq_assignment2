@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <header>
+            <img src="./img/logo.png" alt="Your App Logo" class="logo">
+        </header>
+        <div class="auth-options">
+            <button class="auth-passkeys">
+                <img src="./img/fingerPrint.png" alt="Apple Logo" class="auth-icon">
+                Sign up with passkeys</button>
+            <div class="divider">
+                <hr class="line" />
+                <span class="or">or</span>
+                <hr class="line" />
+            </div>
+        </div>
+        <form action="/signup" method="post" class="login-form">
+            <input type="email" id="username" name="username" placeholder="Email" required>
+            <input type="password" id="password-input" name="password" placeholder="Password" required minlength="8"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+
+            <button type="submit" class="sign-in-button">Sign Up</button>
+        </form>
+    </div>
+
+    <script src="./auth.js" type="module"></script>
+</body>
+
+</html>
