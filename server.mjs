@@ -54,7 +54,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// Move Google authentication routes outside of the /login route
+
 app.get('/auth/google', (req, res) => {
   const authorizationUrl = 'https://accounts.google.com/o/oauth2/v2/auth';
   const params = {
