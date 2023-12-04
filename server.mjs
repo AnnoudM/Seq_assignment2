@@ -36,10 +36,6 @@ app.post('/signup', async (req, res) => {
 });
 
 // Login endpoint
-
-
-
-
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
   let user = signin(username);
