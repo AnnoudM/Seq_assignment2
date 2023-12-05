@@ -64,10 +64,67 @@ app.get('/auth/google', (req, res) => {
 });
 
 app.get('/auth/google/callback', async (req, res) => {
-  // ... (Your existing Google authentication code)
+  const { code } = req.query;
+
+  if (!code) {
+    return res.status(400).send('Code not found');
+  }
+
+  try {
+    // Exchange the received code for an access token
+    const tokenParams = {
+      client_id: CLIENT_ID,
+      client_secret: CLIENT_SECRET,
+      redirect_uri: REDIRECT_URI,
+      grant_type: 'authorization_code',
+      code,
+    };
+
+    const tokenResponse = await fetch('https://oauth2.googleapis.com/token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: querystring.stringify(tokenParams),
+    });
+
+    if (!tokenResponse.ok) {
+      throw new Error('Failed to fetch access token');
+    }
+
+    const tokenData = await tokenResponse.json();
+
+    // Now you have the access token, you can use it to fetch user info or perform actions on behalf of the user
+    const { access_token } = tokenData;
+
+    // Fetch user info using the access token
+    const userInfoResponse = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
+
+    if (!userInfoResponse.ok) {
+      throw new Error('Failed to fetch user information');
+    }
+
+    const userInfo = await userInfoResponse.json();
+
+    // At this point, you have the user information available in the `userInfo` object
+    console.log('User Info:', userInfo);
+
+    // Here you can proceed with creating or authenticating the user in your system
+    // For example:
+    // const { email, name } = userInfo;
+    // Perform actions based on this information, like registering the user in your system or logging them in
+
+    res.send('Google authentication successful');
+  } catch (error) {
+    console.error('Error during Google authentication:', error);
+    res.status(500).send('Failed to authenticate via Google');
+  }
 });
 
-// ... (Your existing signup route)
 
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000');
