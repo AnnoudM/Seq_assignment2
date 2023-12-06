@@ -130,9 +130,57 @@ app.get('/auth/github', (req, res) => {
 });
 
 app.get('/auth/github/callback', async (req, res) => {
-  const{code} = req.query ;
-  if(!code){
-    return res.status(400).send('Code not found');  }
+  const { code } = req.query;
+  if (!code) {
+    return res.status(400).send('Code not found');
+  }
+
+  try {
+    // Exchange the received code for an access token
+    const tokenParams = {
+      client_id: CLIENT_ID2,
+      client_secret: CLIENT_SECRET2,
+      code,
+    };
+
+    const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(tokenParams),
+    });
+
+    if (!tokenResponse.ok) {
+      throw new Error('Failed to fetch access token');
+    }
+
+    const tokenData = await tokenResponse.json();
+    const { access_token } = tokenData;
+
+    // Fetch user info using the access token
+    const userInfoResponse = await fetch('https://api.github.com/user', {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
+
+    if (!userInfoResponse.ok) {
+      throw new Error('Failed to fetch user information');
+    }
+
+    const userInfo = await userInfoResponse.json();
+    // At this point, you have the user information available in the `userInfo` object
+    console.log('GitHub User Info:', userInfo);
+    // Here you can proceed with creating or authenticating the user in your system
+
+    // For example, you can send a success response or perform actions based on the user information
+    res.send('GitHub authentication successful');
+  } catch (error) {
+    console.error('Error during GitHub authentication:', error);
+    res.status(500).send('Failed to authenticate via GitHub');
+  }
 });
 
 app.listen(3000, () => {
