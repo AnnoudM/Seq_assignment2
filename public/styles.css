@@ -35,7 +35,7 @@ header {
     font-weight: bold;
 }
 
-.auth-google, .auth-passkeys {
+.auth-google, .auth-passkeys,.auth-Github {
     width: 100%;
     padding: 15px;
     margin-bottom: 10px;
@@ -59,7 +59,14 @@ header {
 .auth-google:hover {
     background-color: #e88a80;
 }
+.auth-Github {
+    background-color: #6a6969;
+    color: white;
+}
 
+.auth-Github:hover {
+    background-color: #6a6969;
+}
 .auth-passkeys {
     background-color: wheat;
     color: black;
