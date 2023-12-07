@@ -109,7 +109,10 @@ app.get('/auth/google/callback', async (req, res) => {
     
     console.log('Google user Info:', userInfo);
     
-    res.send('Google authentication successful');
+    const userEmail = userInfo.email;
+    console.log('User Email:', userEmail);
+
+    res.status(200).send(`<h1>Login successful</h1><p>Welcome ${userEmail}</p>`);
   } catch (error) {
     console.error('Error during Google authentication:', error);
     res.status(500).send('Failed to authenticate via Google');
@@ -170,9 +173,10 @@ app.get('/auth/github/callback', async (req, res) => {
     const userInfo = await userInfoResponse.json();
     
     console.log('GitHub User Info:', userInfo);
-    
-    
-    res.send('GitHub authentication successful');
+    const userName = userInfo.name;
+    console.log('User name:', userName);
+
+    res.status(200).send(`<h1>Login successful</h1><p>Welcome ${userName}</p>`);
   } catch (error) {
     console.error('Error during GitHub authentication:', error);
     res.status(500).send('Failed to authenticate via GitHub');
