@@ -107,7 +107,7 @@ app.get('/auth/google/callback', async (req, res) => {
     }
     const userInfo = await userInfoResponse.json();
     // At this point, you have the user information available in the `userInfo` object
-    console.log('User Info:', userInfo);
+    console.log('Google user Info:', userInfo);
     // Here you can proceed with creating or authenticating the user in your system
     // For example:
     // const { email, name } = userInfo;
