@@ -45,5 +45,31 @@
     ],
     "userID": "a2hhbGlkNTU1QGdtYWlsLmNvbQ",
     "userName": "khalid555@gmail.com"
+  },
+  "miriam": {
+    "devices": [
+      {
+        "credentialPublicKey": "pQECAyYgASFYIMI3e02BkV7m-s5uw3Qrm7nanZUVHLy0RQJSOlc2BLigIlggncQvsyeuY4XiIRlvx9mlKDjcFi5NlFb6VS61AzeGXi4",
+        "credentialID": "Aj87SJ3bJu0O-WFavnHSIEv0qpLm91evssoWn4zWGV8",
+        "transports": [
+          "internal"
+        ]
+      }
+    ],
+    "userID": "bWlyaWFt",
+    "userName": "miriam"
+  },
+  "miriiam": {
+    "devices": [
+      {
+        "credentialPublicKey": "pQECAyYgASFYIEzIvvjypQYXuNyzKLvnXd_ak3HTawOtjpImYU5ByzC1IlggCBXww_cPTzjET0hShDzclh1bbjM3LcuI46Dxw-hxVpQ",
+        "credentialID": "XzzQLkU9Cs0sojJK-wamIGaphWDGSoaShnKyjmFTCOo",
+        "transports": [
+          "internal"
+        ]
+      }
+    ],
+    "userID": "bWlyaWlhbQ",
+    "userName": "miriiam"
   }
 }

@@ -120,14 +120,13 @@ document.getElementById('loginButton').addEventListener('click', () => {
   window.location.href = '/auth/google';
 });
 
+document.getElementById('loginGithub').addEventListener('click', () => {
+  window.location.href = '/auth/github';
+});
 // btnEl.addEventListener('click',register);
 btnEl2.getElementById('registerButton').addEventListener('click', register);
 // Attach the register function to the button click event
 btnEl2.getElementById('registerButton').addEventListener('click', () => {
   console.log('Register button clicked');
   register();
-});
-
-document.getElementById('loginGithub').addEventListener('click', () => {
-    window.location.href = '/auth/github';
 });
