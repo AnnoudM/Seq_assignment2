@@ -6,5 +6,44 @@
   "khalid@gmail.com": {
     "username": "khalid@gmail.com",
     "password": "$2b$10$.4lSKeT5as9psStBt3sT2ehoNDywY/b5dqD5uG6vZ56zlfkU9xVu."
+  },
+  "khalid22@gmail.com": {
+    "devices": [
+      {
+        "credentialPublicKey": "pQECAyYgASFYIMOffnPssYazcTaAheL2wLuZb-hlOFjF17AnP4AewBG6IlggkYwNkgMQDBKuBN7OjnQS9Pv9fcwGLVDoM2Oyi0Vd2Jc",
+        "credentialID": "T-3jfiMx2SBQLrJT3_9WSJVCTJGIpBK5MJSrMfdfCPE",
+        "transports": [
+          "internal"
+        ]
+      }
+    ],
+    "userID": "a2hhbGlkMjJAZ21haWwuY29t",
+    "userName": "khalid22@gmail.com"
+  },
+  "khalid777@gmail.com": {
+    "devices": [
+      {
+        "credentialPublicKey": "pQECAyYgASFYIFluxeWhzshK0VoI1RBQDZCfJ5gsOAWl2RTZ79xcxH21IlggYi6xDEgGbN6Y-dB4oDU6_OFqtL5jfU2ZkYSri6Wpp68",
+        "credentialID": "YjT3KFTh_KMlhF2GGVBf0fsTo7Vt9noms4cBFSiw7jg",
+        "transports": [
+          "internal"
+        ]
+      }
+    ],
+    "userID": "a2hhbGlkNzc3QGdtYWlsLmNvbQ",
+    "userName": "khalid777@gmail.com"
+  },
+  "khalid555@gmail.com": {
+    "devices": [
+      {
+        "credentialPublicKey": "pQECAyYgASFYIMY_i2t-Q15F3Y4g_lWywp-ckYhxKuyw4yxnlD7tZpEwIlggG7v_AKObdp7ZRird8xZjuryYXAK_pVyFGX0YW1OGkJ0",
+        "credentialID": "2Ujx5fGcfWSJBmQsa17-xGYhUM2ivl53UbgGZoQiplE",
+        "transports": [
+          "internal"
+        ]
+      }
+    ],
+    "userID": "a2hhbGlkNTU1QGdtYWlsLmNvbQ",
+    "userName": "khalid555@gmail.com"
   }
 }

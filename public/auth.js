@@ -4,7 +4,7 @@ import {
   startAuthentication,
 } from 'https://cdn.skypack.dev/@simplewebauthn/browser';
 
-const btnEl = document.querySelector('.auth-passkeys');
+const btnEl = document.querySelector('#siginBTNpasskeys');
 const btnEl2 = document.querySelector('#registerButton');
 
 // Function to handle user registration
@@ -107,7 +107,13 @@ console.log('Button Element sign up :', btnEl2);
 if (btnEl) {
   btnEl.addEventListener('click', webAuthnLogin);
 } else {
-    console.error('Element not found');
+    console.error('sign in Element not found');
+}
+
+if (btnEl2) {
+  btnEl2.addEventListener('click', register);
+} else {
+    console.error('sign up Element not found');
 }
 
 document.getElementById('loginButton').addEventListener('click', () => {
