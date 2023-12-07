@@ -75,7 +75,7 @@ app.get('/auth/google/callback', async (req, res) => {
     return res.status(400).send('Code not found');
   }
   try {
-    // Exchange the received code for an access token
+    
     const tokenParams = {
       client_id: CLIENT_ID,
       client_secret: CLIENT_SECRET,
@@ -94,9 +94,9 @@ app.get('/auth/google/callback', async (req, res) => {
       throw new Error('Failed to fetch access token');
     }
     const tokenData = await tokenResponse.json();
-    // Now you have the access token, you can use it to fetch user info or perform actions on behalf of the user
+   
     const { access_token } = tokenData;
-    // Fetch user info using the access token
+   
     const userInfoResponse = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
       headers: {
         Authorization: `Bearer ${access_token}`,
@@ -106,12 +106,9 @@ app.get('/auth/google/callback', async (req, res) => {
       throw new Error('Failed to fetch user information');
     }
     const userInfo = await userInfoResponse.json();
-    // At this point, you have the user information available in the `userInfo` object
+    
     console.log('Google user Info:', userInfo);
-    // Here you can proceed with creating or authenticating the user in your system
-    // For example:
-    // const { email, name } = userInfo;
-    // Perform actions based on this information, like registering the user in your system or logging them in
+    
     res.send('Google authentication successful');
   } catch (error) {
     console.error('Error during Google authentication:', error);
@@ -124,7 +121,7 @@ app.get('/auth/github', (req, res) => {
   const params = {
     client_id: CLIENT_ID2,
     redirect_uri: GITHUB_REDIRECT_URI,
-    scope: 'read:user', // Adjust the scope based on your requirements
+    scope: 'read:user',
   };
   res.redirect(`${authorizationUrl}?${querystring.stringify(params)}`);
 });
@@ -136,7 +133,7 @@ app.get('/auth/github/callback', async (req, res) => {
   }
 
   try {
-    // Exchange the received code for an access token
+    
     const tokenParams = {
       client_id: CLIENT_ID2,
       client_secret: CLIENT_SECRET2,
@@ -159,7 +156,7 @@ app.get('/auth/github/callback', async (req, res) => {
     const tokenData = await tokenResponse.json();
     const { access_token } = tokenData;
 
-    // Fetch user info using the access token
+    
     const userInfoResponse = await fetch('https://api.github.com/user', {
       headers: {
         Authorization: `Bearer ${access_token}`,
@@ -171,11 +168,10 @@ app.get('/auth/github/callback', async (req, res) => {
     }
 
     const userInfo = await userInfoResponse.json();
-    // At this point, you have the user information available in the `userInfo` object
+    
     console.log('GitHub User Info:', userInfo);
-    // Here you can proceed with creating or authenticating the user in your system
-
-    // For example, you can send a success response or perform actions based on the user information
+    
+    
     res.send('GitHub authentication successful');
   } catch (error) {
     console.error('Error during GitHub authentication:', error);
