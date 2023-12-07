@@ -22,7 +22,7 @@
             <span class="or">or</span>
             <hr class="line" />
         </div>
-        <button class="auth-passkeys">
+        <button class="auth-passkeys" id="siginBTNpasskeys" onclick="webAuthnLogin()">
             <img src="./img/fingerPrint.png" alt="Apple Logo" class="auth-icon">
             Sign in with passkeys</button>
         <div class="auth-options">
@@ -38,7 +38,7 @@
 
         </div>
     </div>
-    <script src="./auth.js" type="module"></script>
+    <script src="./auth.js" type="module"defer></script>
 </body>
 
 </html>

@@ -1,3 +1,10 @@
 {
- 
+  "shooqalsu@gmail.com": {
+    "username": "shooqalsu@gmail.com",
+    "password": "$2b$10$4kxAvF6okK13WUcR9OPSTOEHgqxTnOnlBCoydg8GqQrx3BJxLii3m"
+  },
+  "khalid@gmail.com": {
+    "username": "khalid@gmail.com",
+    "password": "$2b$10$.4lSKeT5as9psStBt3sT2ehoNDywY/b5dqD5uG6vZ56zlfkU9xVu."
+  }
 }
